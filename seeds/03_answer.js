@@ -20,6 +20,11 @@ exports.seed = function(knex, Promise) {
 				response: "At the library."
 			}),
 			knex('answer').insert({
+				asker_id: find.findFromList('mom', asker, 'asker'),
+				question_id: find.findFromList('Where are you heading?', question, 'question'),
+				response: "To church."
+			}),
+			knex('answer').insert({
 				asker_id: find.findFromList('girlfriend/boyfriend', asker, 'asker'),
 				question_id: find.findFromList('Where are you?', question, 'question'),
 				response: "I'm at a Java meet-up. I'll be home soon."
@@ -36,7 +41,17 @@ exports.seed = function(knex, Promise) {
 			}),
 			knex('answer').insert({
 				asker_id: find.findFromList('cop', asker, 'asker'),
+				question_id: find.findFromList('Where are you heading?', question, 'question'),
+				response: "Wouldn't you like to know."
+			}),
+			knex('answer').insert({
+				asker_id: find.findFromList('cop', asker, 'asker'),
 				question_id: find.findFromList('Do you know why I pulled you over?', question, 'question'),
+				response: "Does it have anything to do with me driving 7mph on the sidewalk?"
+			}),
+			knex('answer').insert({
+				asker_id: find.findFromList('friend', asker, 'asker'),
+				question_id: find.findFromList('Where are you heading?', question, 'question'),
 				response: "Out with my friends Jack and Jim."
 			})
 		]);
